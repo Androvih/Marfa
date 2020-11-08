@@ -167,7 +167,11 @@ def DrinkBlood(text):
     madness=list(cursor.fetchall()[0])
     if madness[0]=="вампир":
         update="f_life="+"".join(list(str(i) for i in range(1,madness[1]+1)))+","
-        conn.execute("UPDATE profil SET "+update+"magic=7, madness="+str(madness[2]+randint(1,4))+" WHERE Number="+str(post_id))
+        madness[2]+=randint(1,4)
+        if madness[2]>=:
+        	conn.execute("UPDATE profil SET "+update+"magic=7, madness="+str(0)+" WHERE Number="+str(post_id))
+        	return "Ты обезумел. Твоё тело во власти мастера"
+        conn.execute("UPDATE profil SET "+update+"magic=7, madness="+str(madness[2])+" WHERE Number="+str(post_id))
         conn.commit()
         return "Магма течёт в твоих венах. Вкусная кровинушка? Ты полон сил"
     else:
