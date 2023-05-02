@@ -12,12 +12,12 @@ name=["марфа","марфонька","марфуня","марфута","ма�
 AudioMes=False
 while (1):
 	try:
-		vk_session = vk_api.VkApi(token='08e35f1aedd6fd784d85d93ba36b7e55083df50d05333357ba270d0400c6cdef3921dd66d75de39cc11ee')
+		vk_session = vk_api.VkApi(token='')
 
-		longpoll = VkBotLongPoll(vk_session,171624221)
+		longpoll = VkBotLongPoll(vk_session,)
 		vk = vk_session.get_api()
 		for event in longpoll.listen():
-			longpoll = VkBotLongPoll(vk_session,171624221)
+			longpoll = VkBotLongPoll(vk_session,)
 			print(event.object)
 			if event.type == VkBotEventType.MESSAGE_NEW:
 				try:
